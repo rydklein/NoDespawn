@@ -14,7 +14,7 @@ import de.tr7zw.changeme.nbtapi.NBTItem;
 
 public class EventListener implements Listener {
     private Main mainRef;
-
+    private short idealAge = -32768;
     @EventHandler(priority = EventPriority.HIGHEST)
     public void entityDeathEvent(EntityDeathEvent event) {
         if (!(event.getEntity().getType().equals(org.bukkit.entity.EntityType.PLAYER))) {
@@ -25,17 +25,15 @@ public class EventListener implements Listener {
 
         event.getDrops().forEach(element -> {
             NBTItem newDropNBT = new NBTItem(element);
-            mainRef.getLogger().info(newDropNBT.getInteger("Age").toString());
-            newDropNBT.setInteger("Age", -32768);
+            mainRef.getLogger().info(newDropNBT.getShort("Age").toString());
+            newDropNBT.setShort("Age", idealAge);
             newItems.add(newDropNBT.getItem());
-            /*mainRef.getLogger().info(newDropNBT.getInteger("Age").toString());
-            mainRef.getLogger().info("Set " + element.getType().toString() + ".");*/
         });
         event.getDrops().clear();
         event.getDrops().addAll(newItems);
         event.getDrops().forEach(element -> {
-            NBTItem newDropNBT = new NBTItem(element);
-            mainRef.getLogger().info(newDropNBT.getInteger("Age").toString());
+            NBTItem newDropNBT2 = new NBTItem(element);
+            mainRef.getLogger().info(newDropNBT2.getShort("Age").toString());
         });
     }
 
