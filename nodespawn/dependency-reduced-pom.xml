@@ -18,7 +18,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.1</version>
+        <version>3.2.4</version>
         <executions>
           <execution>
             <id>shade</id>
@@ -35,6 +35,7 @@
               <shadedPattern>org.gamingtime.nbtTools</shadedPattern>
             </relocation>
           </relocations>
+          <shadedArtifactAttached>false</shadedArtifactAttached>
         </configuration>
       </plugin>
     </plugins>
@@ -55,28 +56,6 @@
       <artifactId>spigot-api</artifactId>
       <version>1.16.4-R0.1-SNAPSHOT</version>
       <scope>provided</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>commons-lang</artifactId>
-          <groupId>commons-lang</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>guava</artifactId>
-          <groupId>com.google.guava</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>gson</artifactId>
-          <groupId>com.google.code.gson</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>bungeecord-chat</artifactId>
-          <groupId>net.md-5</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>snakeyaml</artifactId>
-          <groupId>org.yaml</groupId>
-        </exclusion>
-      </exclusions>
     </dependency>
   </dependencies>
   <properties>

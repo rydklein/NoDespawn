@@ -50,7 +50,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.1</version>
+        <version>3.2.4</version>
         <executions>
           <execution>
             <id>shade</id>
@@ -67,6 +67,7 @@
               <shadedPattern>org.gamingtime.nbtTools</shadedPattern>
             </relocation>
           </relocations>
+          <shadedArtifactAttached>false</shadedArtifactAttached>
         </configuration>
       </plugin>
     </plugins>
