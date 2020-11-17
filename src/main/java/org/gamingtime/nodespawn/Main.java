@@ -12,14 +12,13 @@ public class Main extends JavaPlugin {
         // I have no idea if this is the right way to access the main class from another
         // class, but it works.
         publicListener.setMainRef(this);
-
+        // Put config there if it doesn't exist.
+        saveDefaultConfig();
         // Tells EventHandler to load config options.
         // It's in a function so that I can easily add a reload
         // Config command later without having to refactor stuff.
         publicListener.setConfigs();
 
-        // Put config there if it doesn't exist.
-        saveDefaultConfig();
         getLogger().info("NoDespawn Loaded!");
     }
     /*
